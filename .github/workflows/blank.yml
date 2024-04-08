@@ -31,9 +31,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - 
-        name: push
-        run: |
-          docker pull alpine@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
-          docker tag  05455a08881ea9cf0e752bc48e61bbd71a34c029bb13df01e40e3e70e0d007bd ghcr.io/janisz/push-test
-          docker push ghcr.io/${{ github.actor }}/push-test:latest
+      - uses: actions/checkout@v2
+      - name: create image from repository
+        run: docker build -t ghcr.io/${{ github.actor }}/test .
+      - name: push image to GitHub Container Registry
+        run: docker push ghcr.io/${{ github.actor }}/test:latest
