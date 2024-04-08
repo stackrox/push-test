@@ -35,4 +35,4 @@ jobs:
       - name: create image from repository
         run: docker build -t ghcr.io/${{ github.actor }}/test .
       - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.actor }}/test:latest
+        run: docker push ghcr.io/${{ github.actor }}/test
