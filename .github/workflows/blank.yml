@@ -35,5 +35,5 @@ jobs:
         name: push
         run: |
           docker pull alpine@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
-          docker tag  05455a08881ea9cf0e752bc48e61bbd71a34c029bb13df01e40e3e70e0d007bd ghcr.io/janisz/alpine:latest
-          docker push ghcr.io/janisz/alpine:latest
+          docker tag  05455a08881ea9cf0e752bc48e61bbd71a34c029bb13df01e40e3e70e0d007bd ghcr.io/janisz/push-test:latest
+          docker push ghcr.io/janisz/push-test:latest
